@@ -41,9 +41,10 @@ const {loading,fn:fnLogout} = useFetch(logout)
             <DropdownMenuContent>
               <DropdownMenuLabel>{currentUser?.user_metadata?.name}</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>
+              <DropdownMenuItem >
+                <Link to='/dashboard' className="flex">
                 <LinkIcon className="mr-2 h-4 w-4" />
-                <span>My Links</span>{" "}
+                <span>My Links</span>{" "}</Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="text-red-400">
                 <LogOut className="mr-2 h-4 w-4 text-red-400" />
