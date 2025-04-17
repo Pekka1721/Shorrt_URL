@@ -16,6 +16,7 @@ import useFetch from "../hooks/useFetch";
 import { getUrls } from "../database/apiUrls";
 import { UrlContext } from "../context";
 import { getClicksForUrls } from "../database/apiClicks";
+import LinkCard from "../components/link-card";
 
 
 const Dashboard = () => {
@@ -65,6 +66,9 @@ const filterUrls = urls?.filter((url)=>url.title.toLowerCase().includes(searchQu
   <Input type="text" placeholder="Filter Links..." value={searchQuery} onChange={e=>setSearchQuery(e.target.value)} />
   <Filter className="absolute top-2 right-2 p-1"/>
  {error&&<Error message={error.message}/>}
+ {(filterUrls||[]).map((url,i)=>{
+  return <LinkCard key={i} url={url} fetchUrls={fnUrls}/>
+ })}
    </div>
   </div>
 };
