@@ -17,6 +17,7 @@ import { getUrls } from "../database/apiUrls";
 import { UrlContext } from "../context";
 import { getClicksForUrls } from "../database/apiClicks";
 import LinkCard from "../components/link-card";
+import CreateLink from "../components/createLink";
 
 
 const Dashboard = () => {
@@ -60,7 +61,7 @@ const filterUrls = urls?.filter((url)=>url.title.toLowerCase().includes(searchQu
 </div>
    <div className="flex justify-between">
     <h2>My Links</h2>
-    <Button>Create Link</Button>
+    <CreateLink/>
    </div>
    <div className="relative"> 
   <Input type="text" placeholder="Filter Links..." value={searchQuery} onChange={e=>setSearchQuery(e.target.value)} />
@@ -70,6 +71,7 @@ const filterUrls = urls?.filter((url)=>url.title.toLowerCase().includes(searchQu
   return <LinkCard key={i} url={url} fetchUrls={fnUrls}/>
  })}
    </div>
+   
   </div>
 };
 export default Dashboard;
