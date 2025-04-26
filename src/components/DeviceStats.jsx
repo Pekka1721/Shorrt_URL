@@ -1,6 +1,6 @@
-const DeviceStats = ()=>{
+const DeviceStats = ({stats})=>{
     return <div>
-        Device Data
+        
     </div>
 }
 export default DeviceStats;

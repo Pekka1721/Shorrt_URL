@@ -9,6 +9,8 @@ import { BeatLoader,BarLoader } from "react-spinners";
 import { LinkIcon,Copy,Download, Trash} from "lucide-react";
 import {Button} from '@/ui/components/button';
 import {Card,CardHeader,CardTitle,CardDescription,CardContent,CardFooter} from "@/ui/components/card";
+import LocationStats from "./locationStats";
+import DeviceStats from "./DeviceStats";
 
 
 
@@ -85,8 +87,8 @@ const Link = ()=>{
   </CardContent>
  
 </Card>
-<CardTitle>Location Data</CardTitle>
-<CardTitle>Device Info</CardTitle>
+<CardTitle><LocationStats stats={{}}/></CardTitle>
+<CardTitle><DeviceStats stats={{}}/></CardTitle>
                 </CardContent>):(<CardContent>
                     {loadingStats===false?"No statistics yet":"Loading Statics.."}
                 </CardContent>)}
